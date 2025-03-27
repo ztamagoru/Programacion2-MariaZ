@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbti1ohgyeers"
-path="res://.godot/imported/carpincho_idle_005.png-18b28543210d51b54239f58c30532ed3.ctex"
+uid="uid://t5sv4sqrr87r"
+path="res://.godot/imported/run.png-41fe581b40f1902d53f94194ab462570.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/carpincho_idle_005.png"
-dest_files=["res://.godot/imported/carpincho_idle_005.png-18b28543210d51b54239f58c30532ed3.ctex"]
+source_file="res://assets/sprites/player/run.png"
+dest_files=["res://.godot/imported/run.png-41fe581b40f1902d53f94194ab462570.ctex"]
 
 [params]
 
