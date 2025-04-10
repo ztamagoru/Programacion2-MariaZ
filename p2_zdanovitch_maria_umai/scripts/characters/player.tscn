@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://crjlwg6pil8tn"]
+[gd_scene load_steps=43 format=3 uid="uid://crjlwg6pil8tn"]
 
 [ext_resource type="Script" uid="uid://cn4y0olapyh3s" path="res://scripts/characters/player.gd" id="1_6eyoc"]
 [ext_resource type="Texture2D" uid="uid://bvyw6sqw4xqjs" path="res://assets/sprites/player/attack.png" id="2_atpat"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://77t26nb878b4" path="res://scripts/characters/states/running.gd" id="9_a55ao"]
 [ext_resource type="Script" uid="uid://bawgkv4kqbmii" path="res://scripts/characters/states/jump.gd" id="10_f85gi"]
 [ext_resource type="Script" uid="uid://bkm20h62l4ln0" path="res://scripts/characters/states/attack.gd" id="11_4g0yp"]
+[ext_resource type="PackedScene" uid="uid://bexo4ifc5fcgp" path="res://scenes/components/ui/hud/hud.tscn" id="12_ktf6h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yewv4"]
 size = Vector2(24, 44)
@@ -276,3 +277,7 @@ metadata/_custom_type_script = "uid://dyq81l2702vdw"
 [node name="Attack" type="Node2D" parent="State Machine"]
 script = ExtResource("11_4g0yp")
 metadata/_custom_type_script = "uid://dyq81l2702vdw"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("12_ktf6h")]

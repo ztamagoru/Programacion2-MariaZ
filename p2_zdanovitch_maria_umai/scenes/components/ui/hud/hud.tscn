@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=3 uid="uid://bexo4ifc5fcgp"]
+
+[ext_resource type="Texture2D" uid="uid://0hg3yy8a8s" path="res://assets/sprites/icon.svg" id="1_d5y46"]
+[ext_resource type="Script" uid="uid://b6gxku6xolfgd" path="res://scenes/components/ui/hud/hud.gd" id="1_osc62"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_osc62"]
+bg_color = Color(0.798332, 0.497601, 0.586345, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j325g"]
+bg_color = Color(0.506093, 0.614554, 0.714426, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_osc62")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="StatsContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 16
+
+[node name="HPContainer" type="HBoxContainer" parent="MarginContainer/StatsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HPProgressBar" type="ProgressBar" parent="MarginContainer/StatsContainer/HPContainer"]
+custom_minimum_size = Vector2(256, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_osc62")
+value = 50.0
+show_percentage = false
+
+[node name="HPLabel" type="Label" parent="MarginContainer/StatsContainer/HPContainer"]
+layout_mode = 2
+text = "50"
+
+[node name="ManaContainer" type="HBoxContainer" parent="MarginContainer/StatsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ManaProgressBar" type="ProgressBar" parent="MarginContainer/StatsContainer/ManaContainer"]
+custom_minimum_size = Vector2(256, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_j325g")
+value = 33.0
+show_percentage = false
+
+[node name="ManaLabel" type="Label" parent="MarginContainer/StatsContainer/ManaContainer"]
+layout_mode = 2
+text = "33"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_d5y46")
+expand_mode = 3
+
+[node name="CoinsLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "1000"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "trust me"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "1000"
