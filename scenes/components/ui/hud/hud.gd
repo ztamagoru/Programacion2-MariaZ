@@ -1,11 +1,14 @@
 extends Control
 
-var hp : int	= 100
-var mana : int	= 33
+var hp : int
+var mana : int
+
+var hp_max : int
+var mana_max : int
+
 var coins : int = 500
 
-var hp_max : int	= 200
-var mana_max : int	= 150
+#region "onready's"
 
 @onready var hp_bar =		$MarginContainer/StatsContainer/HPContainer/HPProgressBar
 @onready var hp_text =  	$MarginContainer/StatsContainer/HPContainer/HPLabel
@@ -15,9 +18,10 @@ var mana_max : int	= 150
 
 @onready var coins_text =	$MarginContainer/VBoxContainer/HBoxContainer/CoinsLabel
 
+#endregion
+
 func _ready():
-	hp_bar.max_value = hp_max
-	mana_bar.max_value = mana_max
+	update_values()
 
 func _process(_delta):
 	hp_bar.value = hp
@@ -27,3 +31,8 @@ func _process(_delta):
 	mana_text.text = str(mana)
 	
 	coins_text.text = str(coins)
+
+func update_values():
+	hp_bar.max_value = hp_max
+	mana_bar.max_value = mana_max
+	

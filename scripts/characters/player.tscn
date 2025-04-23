@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://crjlwg6pil8tn"]
+[gd_scene load_steps=44 format=3 uid="uid://crjlwg6pil8tn"]
 
 [ext_resource type="Script" uid="uid://cn4y0olapyh3s" path="res://scripts/characters/player.gd" id="1_6eyoc"]
 [ext_resource type="Texture2D" uid="uid://bvyw6sqw4xqjs" path="res://assets/sprites/player/attack.png" id="2_atpat"]
@@ -240,8 +240,12 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="player" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ktf6h"]
+radius = 26.0
+
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("hud")]
 script = ExtResource("1_6eyoc")
+hud = NodePath("CanvasLayer/HUD")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 2)
@@ -250,8 +254,7 @@ shape = SubResource("RectangleShape2D_yewv4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vkt2s")
 animation = &"anim_Attack"
-frame = 3
-frame_progress = 1.0
+frame = 1
 
 [node name="State Machine" type="Node2D" parent="." node_paths=PackedStringArray("player", "sprite")]
 script = ExtResource("6_kqtwu")
@@ -274,10 +277,22 @@ metadata/_custom_type_script = "uid://dyq81l2702vdw"
 script = ExtResource("10_f85gi")
 metadata/_custom_type_script = "uid://dyq81l2702vdw"
 
-[node name="Attack" type="Node2D" parent="State Machine"]
+[node name="Attack" type="Node2D" parent="State Machine" node_paths=PackedStringArray("attack_hitbox")]
 script = ExtResource("11_4g0yp")
+attack_hitbox = NodePath("../../AttackHitbox")
 metadata/_custom_type_script = "uid://dyq81l2702vdw"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("12_ktf6h")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_top = 0
+limit_bottom = 0
+
+[node name="AttackHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
+position = Vector2(14, -16)
+shape = SubResource("CircleShape2D_ktf6h")
+debug_color = Color(1, 0, 0, 0.419608)
