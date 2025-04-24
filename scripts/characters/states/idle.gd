@@ -7,7 +7,7 @@ func enter():
 func update(_delta):
 	pass
 
-func physics_update(_delta):
+func physics_update(delta):
 	if player.is_on_floor():
 		if Input.is_action_just_pressed("attack"):
 			get_parent().change_state("Attack")
@@ -16,7 +16,7 @@ func physics_update(_delta):
 			get_parent().change_state("Jump")
 		
 		var direction = Input.get_axis("move_left", "move_right")
-		player.velocity.x = direction * player.speed
+		player.velocity.x = direction * player.speed * delta
 	
 	if player.velocity != Vector2.ZERO:
 		if player.velocity.x != 0:

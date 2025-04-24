@@ -4,7 +4,7 @@ func enter():
 	sprite.play("anim_" + name)
 	print("running")
 
-func physics_update(_delta):
+func physics_update(delta):
 	if not player.is_on_floor():
 		get_parent().change_state("Falling")
 	
@@ -16,7 +16,7 @@ func physics_update(_delta):
 	
 	var direction = Input.get_axis("move_left", "move_right")
 	
-	player.velocity.x = direction * player.speed
+	player.velocity.x = direction * player.speed * delta
 	player.move_and_slide()
 	
 	if player.velocity.x == 0:

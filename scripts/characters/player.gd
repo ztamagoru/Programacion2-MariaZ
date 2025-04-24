@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed : float = 125.0
-@export var gravity : float = 250.0
-@export var jump_force : float = 200.0
+@export var speed : float = 10000.0
+@export var gravity : float = 350.0
+@export var jump_force : float = 300.0
 
 @export var hud : Control
 
@@ -14,7 +14,7 @@ var mana_max : int = 100
 
 var coins :int 
 
-func ready(_delta):
+func _ready():
 	initialize_player()
 	update_hud()
 
