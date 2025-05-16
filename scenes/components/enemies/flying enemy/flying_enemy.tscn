@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cny342nlmeng7"]
+
+[ext_resource type="Script" uid="uid://r1rs6bi8yywf" path="res://scenes/components/enemies/flying enemy/flying_enemy.gd" id="1_22jfc"]
+[ext_resource type="Texture2D" uid="uid://0hg3yy8a8s" path="res://assets/sprites/icon.svg" id="2_x64da"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shg1m"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oirrw"]
+size = Vector2(60, 60)
+
+[node name="FlyingEnemy" type="CharacterBody2D" node_paths=PackedStringArray("hitbox") groups=["enemies"]]
+script = ExtResource("1_22jfc")
+hitbox = NodePath("Hitbox")
+hp = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.390625, 0.390625)
+texture = ExtResource("2_x64da")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_shg1m")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visible = false
+shape = SubResource("RectangleShape2D_oirrw")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="TimerAttack" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="TimerAttack" to="." method="_on_timer_attack_timeout"]

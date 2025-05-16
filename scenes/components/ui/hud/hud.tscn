@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bexo4ifc5fcgp"]
 
-[ext_resource type="Texture2D" uid="uid://0hg3yy8a8s" path="res://assets/sprites/icon.svg" id="1_d5y46"]
 [ext_resource type="Script" uid="uid://b6gxku6xolfgd" path="res://scenes/components/ui/hud/hud.gd" id="1_osc62"]
+[ext_resource type="Texture2D" uid="uid://bkjnkbvbiejnr" path="res://assets/sprites/collectibles/coins/mate_001.png" id="2_osc62"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_osc62"]
 bg_color = Color(0.798332, 0.497601, 0.586345, 1)
@@ -17,7 +17,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="HUD" type="Control"]
+[node name="HUD" type="Control" node_paths=PackedStringArray("hp_bar", "hp_text", "mana_bar", "mana_text", "coins_text")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,6 +25,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_osc62")
+hp_bar = NodePath("MarginContainer/StatsContainer/HPContainer/HPProgressBar")
+hp_text = NodePath("MarginContainer/StatsContainer/HPContainer/HPLabel")
+mana_bar = NodePath("MarginContainer/StatsContainer/ManaContainer/ManaProgressBar")
+mana_text = NodePath("MarginContainer/StatsContainer/ManaContainer/ManaLabel")
+coins_text = NodePath("MarginContainer/VBoxContainer/HBoxContainer/CoinsLabel")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -87,8 +92,8 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_d5y46")
-expand_mode = 3
+texture = ExtResource("2_osc62")
+stretch_mode = 3
 
 [node name="CoinsLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2

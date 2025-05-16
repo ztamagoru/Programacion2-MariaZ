@@ -12,26 +12,34 @@ var mana : int
 var hp_max : int = 100
 var mana_max : int = 100
 
-var coins :int 
+var coins : int 
 
 func _ready():
-	initialize_player()
-	update_hud()
+	Globals.player = self
+	#initialize_player()
+	
+	await get_tree().process_frame
+	coins = Globals.save_manager.save_data.coins
+	hp = Globals.save_manager.save_data.hp
+	mana = Globals.save_manager.save_data.mana
 
 func initialize_player():
 	hp = hp_max
 	mana = mana_max
-	coins = 0
 
 func _physics_process(_delta):
-	#if velocity.y != 0:
-		#print(str(velocity.y))
-	pass
+	update_hud()
+	
+	if Input.is_key_pressed(KEY_ESCAPE):
+		await Globals.save_manager.save_game()
+		get_tree().quit()
+		
+	#print(coins)
 
 func player_die():
 	queue_free()
 
-func receive_damage(damage : int):
+func take_damage(damage : int):
 	hp -= damage
 	if hp <= 0:
 		player_die()
@@ -41,5 +49,6 @@ func update_hud():
 	hud.hp_max = hp_max
 	hud.mana = mana
 	hud.mana_max = mana_max
-
+	hud.coins = coins
+	
 	hud.update_values()

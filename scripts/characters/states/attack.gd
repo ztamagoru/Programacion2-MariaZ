@@ -5,12 +5,11 @@ extends State
 func enter():
 	sprite.play("anim_" + name)
 	print("attack")
+	for enemy in attack_hitbox.get_overlapping_bodies():
+		if enemy.is_in_group("enemies"):
+			enemy.take_damage(10)
 
 func physics_update(_delta):
-	for hit in attack_hitbox.get_overlapping_bodies():
-		if hit.is_in_group("enemies"):
-			hit.queue_free()
-	
 	await sprite.animation_finished
 	get_parent().change_state("Idle")
 	

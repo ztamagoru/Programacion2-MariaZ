@@ -6,17 +6,17 @@ var mana : int
 var hp_max : int
 var mana_max : int
 
-var coins : int = 500
+var coins : int
 
-#region "onready's"
+#region "exports"
 
-@onready var hp_bar =		$MarginContainer/StatsContainer/HPContainer/HPProgressBar
-@onready var hp_text =  	$MarginContainer/StatsContainer/HPContainer/HPLabel
+@export var hp_bar : ProgressBar
+@export var hp_text : Label
 
-@onready var mana_bar = 	$MarginContainer/StatsContainer/ManaContainer/ManaProgressBar
-@onready var mana_text =	$MarginContainer/StatsContainer/ManaContainer/ManaLabel
+@export var mana_bar : ProgressBar
+@export var mana_text : Label
 
-@onready var coins_text =	$MarginContainer/VBoxContainer/HBoxContainer/CoinsLabel
+@export var coins_text : Label
 
 #endregion
 

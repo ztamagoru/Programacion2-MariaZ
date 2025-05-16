@@ -15,9 +15,15 @@ run/main_scene="uid://4m40trj1uhub"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/sprites/icon.svg"
 
+[autoload]
+
+Globals="*res://scenes/components/globals/globals.gd"
+
 [global_group]
 
 enemies=""
+player=""
+structure=""
 
 [input]
 
