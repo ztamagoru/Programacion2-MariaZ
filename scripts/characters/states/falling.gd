@@ -17,6 +17,10 @@ func physics_update(delta):
 	
 	if player.is_on_floor():
 		get_parent().change_state("Idle")
+		player.jump_count = 0
+	
+	if Input.is_action_just_pressed("jump") and player.double_jump and player.jump_count < 2:
+		get_parent().change_state("Jump")
 	
 	player.move_and_slide()
 

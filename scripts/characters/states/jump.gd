@@ -4,6 +4,7 @@ func enter():
 	sprite.play("anim_" + name)
 	print("jump")
 	
+	player.jump_count += 1
 	player.velocity.y = -player.jump_force
 
 func physics_update(delta):
@@ -16,6 +17,9 @@ func physics_update(delta):
 	
 	if player.velocity.y > 0:
 		get_parent().change_state("Falling")
+	
+	if Input.is_action_just_pressed("jump") and player.double_jump and player.jump_count < 2:
+		get_parent().change_state("Jump")
 	
 	player.move_and_slide()
 

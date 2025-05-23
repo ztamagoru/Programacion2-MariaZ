@@ -3,9 +3,9 @@ extends Enemy
 @export var cd_timer : Timer
 
 var distance_limit : int = 50
-var agro_vision : int = 200
+var agro_vision : int = 500
 
-var enemy_speed : float = 2500.0
+var enemy_speed : float = 5000.0
 
 var position_start : Vector2 # = position
 var direction : Vector2 = Vector2(1,0)
@@ -18,11 +18,13 @@ func _ready():
 
 func _physics_process(delta):
 	if is_instance_valid(Globals.player):
-		if position.distance_to(Globals.player.position) <= agro_vision:
+		if global_position.distance_to(Globals.player.position) <= agro_vision:
 			if shoot_cd: shoot()
 		else:
 			#print("not agro")
 			movement(delta)
+	else:
+		movement(delta)
 
 func movement(delta):
 	velocity = direction * enemy_speed * delta
@@ -39,9 +41,10 @@ func shoot():
 	cd_timer.start(2.0)
 	
 	projectile.top_level = true
+	projectile.z_index = 3
 	projectile.global_position = global_position
 	
-	if position.x < Globals.player.position.x: # right = 1, left = -1
+	if global_position.x < Globals.player.global_position.x: # right = 1, left = -1
 		projectile.direction = 1
 	else:
 		projectile.direction = -1

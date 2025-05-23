@@ -1,6 +1,6 @@
 extends Projectile
 
-var velocity_y : float = -50
+var velocity_y : float = -150
 
 func _process(delta): 
 	check_structure()
