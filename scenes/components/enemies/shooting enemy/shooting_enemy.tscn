@@ -6,10 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0dh5k"]
 size = Vector2(46, 43)
 
-[node name="ShootingEnemy" type="CharacterBody2D" node_paths=PackedStringArray("cd_timer") groups=["enemies"]]
+[node name="ShootingEnemy" type="CharacterBody2D" node_paths=PackedStringArray("cd_timer", "sprite") groups=["enemies"]]
 script = ExtResource("1_t7ja3")
 cd_timer = NodePath("ShootCooldown")
 hp = 20
+sprite = NodePath("Sprite2D")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
