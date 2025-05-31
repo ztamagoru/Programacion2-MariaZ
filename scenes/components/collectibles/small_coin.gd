@@ -1,6 +1,8 @@
 extends Collectibles
 
+var value : int = 1
+
 func grab_item():
-	Globals.player.coins += 1
+	Globals.player.coins += value
 	queue_free()
 	pass

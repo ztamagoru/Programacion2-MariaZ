@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch86p2air5br0"]
+
+[ext_resource type="Script" uid="uid://2lqhdj2jt213" path="res://scenes/components/collectibles/mid_coin.gd" id="1_wnram"]
+[ext_resource type="Texture2D" uid="uid://cspgid6c24uw8" path="res://assets/sprites/collectibles/coins/fb162.png" id="2_cny2h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wdhog"]
+
+[node name="Coin" type="Area2D"]
+script = ExtResource("1_wnram")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cny2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_wdhog")

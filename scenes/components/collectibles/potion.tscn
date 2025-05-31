@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt3w2iiuce3a7"]
+
+[ext_resource type="Script" uid="uid://cgp0qaqq332e0" path="res://scenes/components/collectibles/potion.gd" id="1_faiw2"]
+[ext_resource type="Texture2D" uid="uid://bn7ubfbnsdl6t" path="res://assets/sprites/collectibles/coins/fb960.png" id="2_gkycb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uett6"]
+radius = 16.0312
+
+[node name="Potion" type="Area2D"]
+script = ExtResource("1_faiw2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("2_gkycb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uett6")

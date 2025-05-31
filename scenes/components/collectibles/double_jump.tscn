@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cshwn5edj2iir"]
+
+[ext_resource type="Script" uid="uid://7b0x5svirb1g" path="res://scenes/components/collectibles/double_jump.gd" id="1_fqn0d"]
+[ext_resource type="Texture2D" uid="uid://dfwcgrr0ih4u6" path="res://assets/sprites/collectibles/fb2045.png" id="2_h6iov"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h6iov"]
+radius = 11.1803
+
+[node name="DoubleJump" type="Area2D"]
+script = ExtResource("1_fqn0d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.8125, 0.8125)
+texture = ExtResource("2_h6iov")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h6iov")
