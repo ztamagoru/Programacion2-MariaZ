@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c3dfhy4ek6i3v" path="res://assets/sprites/player/idle.png" id="3_kqtwu"]
 [ext_resource type="Texture2D" uid="uid://bvxe4piwb5upa" path="res://assets/sprites/player/jump.png" id="4_6eyoc"]
 [ext_resource type="Texture2D" uid="uid://t5sv4sqrr87r" path="res://assets/sprites/player/run.png" id="5_eojnx"]
-[ext_resource type="Script" uid="uid://47k32i0acptf" path="res://scripts/FMS/state_machine.gd" id="6_kqtwu"]
+[ext_resource type="Script" uid="uid://47k32i0acptf" path="res://scripts/FSM/state_machine.gd" id="6_kqtwu"]
 [ext_resource type="Script" uid="uid://bjn5u2qdmydty" path="res://scripts/characters/states/idle.gd" id="7_pm1ca"]
 [ext_resource type="Script" uid="uid://b4e8cdgiuh0su" path="res://scripts/characters/states/falling.gd" id="8_w2vvj"]
 [ext_resource type="Script" uid="uid://77t26nb878b4" path="res://scripts/characters/states/running.gd" id="9_a55ao"]
@@ -300,6 +300,7 @@ limit_bottom = 0
 [node name="AttackHitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="AttackHitbox"]
+visible = false
 position = Vector2(1, -25)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ktf6h")

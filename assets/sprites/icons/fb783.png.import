@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chungt0078rwy"
-path="res://.godot/imported/fb180.png-808b08013705965cde12a9a49c853695.ctex"
+uid="uid://bt4c0bb0s1u72"
+path="res://.godot/imported/fb783.png-56690f9d98b2ad83763ca8bfbc4a3792.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/collectibles/coins/fb180.png"
-dest_files=["res://.godot/imported/fb180.png-808b08013705965cde12a9a49c853695.ctex"]
+source_file="res://assets/sprites/icons/fb783.png"
+dest_files=["res://.godot/imported/fb783.png-56690f9d98b2ad83763ca8bfbc4a3792.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfwcgrr0ih4u6"
-path="res://.godot/imported/fb2045.png-5ad19eed3dd6d33f5139600d526d385d.ctex"
+uid="uid://chungt0078rwy"
+path="res://.godot/imported/fb180.png-8e0f00be192aa70e45cf52b40b9ec9e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/collectibles/fb2045.png"
-dest_files=["res://.godot/imported/fb2045.png-5ad19eed3dd6d33f5139600d526d385d.ctex"]
+source_file="res://assets/sprites/collectibles/fb180.png"
+dest_files=["res://.godot/imported/fb180.png-8e0f00be192aa70e45cf52b40b9ec9e2.ctex"]
 
 [params]
 

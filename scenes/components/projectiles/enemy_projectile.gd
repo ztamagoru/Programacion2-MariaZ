@@ -6,7 +6,7 @@ func _process(delta):
 	check_structure()
 	
 	for collision in hitbox.get_overlapping_bodies():
-		if collision .is_in_group("player"):
+		if collision.is_in_group("player"):
 			despawn()
 			Globals.player.take_damage(10)
 	

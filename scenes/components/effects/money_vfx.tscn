@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6k8i84lspjjf"]
+
+[ext_resource type="Texture2D" uid="uid://dr4oxyeh1otra" path="res://assets/sprites/effects/fb926.png" id="1_vg44m"]
+[ext_resource type="Script" uid="uid://dltn3kcig37yp" path="res://scenes/components/effects/money_vfx.gd" id="2_peadc"]
+
+[node name="MoneyVFX" type="Sprite2D"]
+texture = ExtResource("1_vg44m")
+script = ExtResource("2_peadc")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.75
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

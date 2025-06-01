@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://be7ywet5iloq6"]
+
+[ext_resource type="Texture2D" uid="uid://cxeofcxxt8xeq" path="res://assets/sprites/effects/fb603.png" id="1_oxrgo"]
+[ext_resource type="Script" uid="uid://6dtleix440et" path="res://scenes/components/effects/hp_vfx.gd" id="1_ypmkw"]
+
+[node name="HpVfx" type="Sprite2D"]
+texture = ExtResource("1_oxrgo")
+script = ExtResource("1_ypmkw")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.75
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
